@@ -397,4 +397,41 @@ int main()
 // 
 // 
 B.练习
-1.
+1.统计二进制中1的个数
+  写一个函数返回参数二进制中1的个数。
+  比如: 15    00001111    4个1
+a.
+int count_num_of_1(int n)
+{
+	int count = 0;
+	while (n)
+	{
+		if ((n % 2) == 1)
+		{
+			count++;
+		}
+		n /= 2;
+	}
+	return count;
+}
+b.
+int count_num_of_1(int n)
+{
+	int i = 0;
+	for(i=0;i<32;i++)
+	{
+		if((n>>1)&1==1)
+		{
+			count++
+		}
+	}
+	return count++;
+}
+int main()
+{
+	int num  = 0;
+	scanf("%d",&num);
+	int n = count_num_of_1(num);
+	printf("%d\n" , n);
+	return 0;
+}
