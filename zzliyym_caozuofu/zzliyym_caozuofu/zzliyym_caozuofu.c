@@ -401,7 +401,7 @@ B.练习
   写一个函数返回参数二进制中1的个数。
   比如: 15    00001111    4个1
 a.
-int count_num_of_1(int n)
+int count_num_of_1(unsigned int n)
 {
 	int count = 0;
 	while (n)
@@ -426,6 +426,17 @@ int count_num_of_1(int n)
 		}
 	}
 	return count++;
+}
+c.
+int count_num_of_1(int n)
+{
+	int count = 0;
+	while(n)
+	{
+		n=n&(n-1);
+		count++;
+	}
+	return count;
 }
 int main()
 {
