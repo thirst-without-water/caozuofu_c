@@ -485,11 +485,24 @@ int main()
   多组输入，一行有两个整数，分别表示年份和月份，用空格分隔。
   输出描述:
   针对每组输入，输出为一行，一个整数，表示这一年这个月有多少天。
+int is_leap_year(int y)
+{
+	  return((y%4==0)&&(y%100!=0)||(y%400==0));
+}
 int main()
 {
 	  int y = 0;
 	  int m = 0;
-	  int d =0;
-	  while(scanf(""""""))
+	  int d = 0;
+	  int days[13] = {0,31,28,31,30,31,30,31,31,30,31,30,31}
+	  while(scanf("%d%d",&y,&m)==2)
+	  {
+		  int d = days[m];
+		  if((is_leap_year(y)==1) && (m ==2))
+		  {
+			  d++;
+		  }
+		  printf("%d\n",d);
+	  }
 	  return 0;
 }
